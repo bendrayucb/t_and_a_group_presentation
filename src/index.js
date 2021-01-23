@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import {FamilyCard} from '~components';
 
 
 import {
@@ -160,7 +161,60 @@ run;`);
 
 const Presentation = () => (
   <Deck theme={theme} template={template} transitionEffect="fade">
-      <Slide>
+    <Slide>
+      <Markdown>
+        {`
+          # Strengths
+          - Great architecture (isolated modular components)*
+          - Great application development*
+          - Well-curated team of strong team of developers
+
+          ***** *within the confines of SAS, VBA and sharepoint*
+        `}
+      </Markdown>
+    </Slide>
+
+    <Slide>
+      <Markdown>
+        {`
+          # Weaknesses
+
+          - "Locked in" to Microsoft products 
+          - Opinionated framework
+          - Limited "tool box" for building solutions
+ 
+        `}
+      </Markdown>
+    </Slide>
+
+    <Slide>
+      <Markdown>
+        {`
+          # Opportunities
+
+          - Microservices
+          - Cloud services
+            - "Function as a Service (FaaS)"
+            - Security
+            - Kubernetes (Federates ability to do "PoC" projects)
+          - Open source projects
+          - Commandline tools
+        `}
+      </Markdown>
+    </Slide>
+
+    <Slide>
+      <Markdown>
+        {`
+          # Threats
+
+          - Learning curve for developers
+          - Resistance from IT to non-microsoft products 
+        `}
+      </Markdown>
+    </Slide>
+
+    {/* <Slide>
       <Markdown>
         {`
           # Layout Tables in Markdown
@@ -174,9 +228,9 @@ const Presentation = () => (
           | IE 11           | No        |          |
         `}
       </Markdown>
-    </Slide>
+    </Slide> */}
 
-    <Slide>
+    {/* <Slide>
       <FlexBox height="100%">
         <SpectacleLogo size={500} />
       </FlexBox>
@@ -242,7 +296,7 @@ const Presentation = () => (
             <CodePane
               highlightStart={value[0]}
               highlightEnd={value[1]}
-              fontSize={18}
+              // fontSize={18}
               language="sas"
               autoFillHeight
             >
@@ -375,7 +429,7 @@ const Presentation = () => (
 
         Notes: These are more notes
       `}
-    </Markdown>
+    </Markdown> */}
   </Deck>
 );
 
