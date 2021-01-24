@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {FamilyCard} from '~components';
+// import {FamilyCard} from './components';
 
 
 import {
@@ -198,7 +198,7 @@ const Presentation = () => (
             - Security
             - Kubernetes (Federates ability to do "PoC" projects)
           - Open source projects
-          - Commandline tools
+          - Command line tools
         `}
       </Markdown>
     </Slide>
@@ -210,6 +210,20 @@ const Presentation = () => (
 
           - Learning curve for developers
           - Resistance from IT to non-microsoft products 
+        `}
+      </Markdown>
+    </Slide>
+
+    <Slide>
+      <Markdown>
+        {`
+          # Proposal
+          > Proof of Concept Autotrial web application to run in parallel
+
+          - The project is still in early stages so both streams can evolve together
+          - It handles only metadata so lowers risk to study data
+          - Decouples the project from both SAS an Excel
+          - Logs can easily be kept of all generated outputs - learning data for future auto-generation
         `}
       </Markdown>
     </Slide>
@@ -230,12 +244,18 @@ const Presentation = () => (
       </Markdown>
     </Slide> */}
 
+
+
     {/* <Slide>
       <FlexBox height="100%">
         <SpectacleLogo size={500} />
+        <FamilyCard />
       </FlexBox>
-    </Slide>
-    <Slide>
+    </Slide> */}
+
+
+
+    {/* <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="150px">
           ✨<i>Spectacle</i> ✨
