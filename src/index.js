@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {FamilyCard} from './components';
+import { Button } from 'antd';
 
 
 import {
@@ -172,6 +172,10 @@ const Presentation = () => (
           ***** *within the confines of SAS, VBA and sharepoint*
         `}
       </Markdown>
+      <Notes>
+        <p>The architecture seems well-written for SAS and VBA so it is a decent team of programmers - however the constraints of doing everything in SAS and VBA means "whata is possible" is significantly limited both in terms of functionality, testsability and replaceability</p>
+
+      </Notes>
     </Slide>
 
     <Slide>
@@ -229,20 +233,11 @@ const Presentation = () => (
     </Slide>
 
     {/* <Slide>
-      <Markdown>
-        {`
-          # Layout Tables in Markdown
-
-          | Browser         | Supported | Versions |
-          |-----------------|-----------|----------|
-          | Chrome          | Yes       | Last 2   |
-          | Firefox         | Yes       | Last 2   |
-          | Opera           | Yes       | Last 2   |
-          | Edge (EdgeHTML) | No        |          |
-          | IE 11           | No        |          |
-        `}
-      </Markdown>
+      <FlexBox height="100%">
+        <Button type="primary">Primary Button</Button>
+      </FlexBox>
     </Slide> */}
+
 
 
 
