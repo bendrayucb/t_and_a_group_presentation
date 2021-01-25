@@ -274,23 +274,52 @@ const Presentation = () => (
       </Notes>
     </Slide>
 
+
+
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨<i>Webhooks and Websockets</i> ✨
+          ✨APIs & Decoupled Microservices✨
         </Heading>
         <UnorderedList>
-          <ListItem>Helps decouple applications through events</ListItem>
-          <ListItem></ListItem>
+          <ListItem>API design</ListItem>
+          <ListItem>Future-proofed applications</ListItem>
+          <ListItem>API versioning</ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <ul>
+          <li>API Design - specifies requirements of input and output parameters</li>
+          <li>Each microservice can be built/hosted/switched out in isolation. If anything becomes redundant or not fit for purpose it can be switched out. Only requirement is that the input/output parameters remain unchanged</li>
+          <li>...and if input/output parameters DO change, then this is elegantly handled with API versioning</li>
+          <li>API Versioning (either put "V1" into the URI or put it in a custom header)</li>
+        </ul>
+      </Notes>
+    </Slide>
+
+
+
+
+
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          ✨Webhooks and Websockets ✨
+        </Heading>
+        <UnorderedList>
+          <ListItem>Webhooks: Trigger events in another service</ListItem>
+          <ListItem>Websockets: Two-way communication</ListItem>
         </UnorderedList>
       </FlexBox>
       <Notes>
         <p>
-          Webhooks - App-to-app communcation/triggers
+          Webhooks - App-to-app communication/triggers
           Websockets - 2-way communication between user(s) and application
         </p>
       </Notes>
     </Slide>
+
+
 
     <Slide>
       <FlexBox height="100%" flexDirection="column">
@@ -298,14 +327,17 @@ const Presentation = () => (
           ✨<i>Functions as a Service (FaaS)</i> ✨
         </Heading>
         <UnorderedList>
-          <ListItem>Helps decouple applications through events</ListItem>
-          <ListItem></ListItem>
+          <ListItem>API endpoint</ListItem>
+          <ListItem>Language agnostic</ListItem>
+          <ListItem>Highly available / scalable</ListItem>
         </UnorderedList>
       </FlexBox>
       <Notes>
-        <p>
-
-        </p>
+        <ul>
+          <li>It is an endpoint that is not coupled to an application server</li>
+          <li>The function can be written in almost any language (probably not SAS though)</li>
+          <li>Highly-available (no downtime and hugely multi-concurrent users) and highly scalable (add more memory/CPU)</li>
+        </ul>
       </Notes>
     </Slide>
 
@@ -325,6 +357,9 @@ const Presentation = () => (
         </p>
       </Notes>
     </Slide>
+
+
+
 
     {/* <Slide>
       <FlexBox height="100%">
