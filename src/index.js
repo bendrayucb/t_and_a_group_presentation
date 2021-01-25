@@ -347,14 +347,19 @@ const Presentation = () => (
           ✨<i>Web Assembly</i> ✨
         </Heading>
         <UnorderedList>
-          <ListItem>Web applications running at core CPU speed (eg with Rust)</ListItem>
-          <ListItem></ListItem>
+          <ListItem>Compiled code running in the browser</ListItem>
+          <ListItem>Harnesses clients CPU</ListItem>
+          <ListItem>Memory-safe deployments</ListItem>
+          <ListItem>Part of the Open Web platform</ListItem>
         </UnorderedList>
       </FlexBox>
       <Notes>
-        <p>
-
-        </p>
+        <ul>
+          <li>Probably as transformational as javascript was for the browser</li>
+          <li>Web applications running at core CPU speed (eg with Rust)</li>
+          <li>A memory-safe, sandboxed execution environment</li>
+          <li>Open web platform: Asssured feature of all browsers. WebAssembly is designed to maintain the versionless, feature-tested, and backwards-compatible</li>
+        </ul>
       </Notes>
     </Slide>
 
