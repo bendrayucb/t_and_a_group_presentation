@@ -1,7 +1,7 @@
 {
   "name": "ucb_presesntation",
   "version": "0.0.1",
-  "description": "Spectacle presentation",
+  "description": "High level discussion",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack",

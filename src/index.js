@@ -27,6 +27,9 @@ import {
   indentNormalizer
 } from 'spectacle';
 
+
+document.title = "SSI Standards"
+
 // SPECTACLE_CLI_THEME_START
 const theme = {
   fonts: {
@@ -221,15 +224,106 @@ const Presentation = () => (
     <Slide>
       <Markdown>
         {`
-          # Proposal
-          > Proof of Concept Autotrial web application to run in parallel
+          # Current services/technologies
 
-          - The project is still in early stages so both streams can evolve together
-          - It handles only metadata so lowers risk to study data
-          - Decouples the project from both SAS an Excel
-          - Logs can easily be kept of all generated outputs - learning data for future auto-generation
+          | Task/Feature                                         | Current    | Possibilities                                            |
+          |------------------------------------------------------|------------|----------------------------------------------------------|
+          | Data ETL                                             | SAS        | Python (Rust in some use cases)                          |
+          | User Interfaces                                      | VBA        | Web app (Javascript, .Net), desktop app (C#, .Net, Rust) |
+          | APIs                                                 | ?          | REST, graphql                                            |
+          | Documentation                                        | Sharepoint | Auto-generated (eg swagger.io, pdoc3)                    |
+          | Version Control                                      | SVN?       | Git for code, SVN for datasets                           |
         `}
       </Markdown>
+    </Slide>
+
+
+
+    {/* <Slide>
+      <Markdown>
+        {`
+          # Compare / Contrast: Testing
+
+          | Task/Feature                                         | Current   | Possible        |
+          |------------------------------------------------------|-----------|----------------------------------------------|
+          | Unit Testing                                         | ?         | Dedicated opensource libraries (eg Jest, )   |
+          | Integration Testing                                  | ?         | Dedicated opensource libraries (eg Jest, )   |
+          | Regression Testing                                   | ?         | Dedicated opensource libraries (eg Jest, )   |
+          | User Testing                                         | ?         | Dedicated opensource libraries (eg Jest, )   |
+        `}
+      </Markdown>
+    </Slide> */}
+
+
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          ✨<i>Continuous Intergration/ Continuous Deployment (CI/CD)</i> ✨
+        </Heading>
+        <UnorderedList>
+          <ListItem>Promotes testing as "first class citizen" and not an after-thought</ListItem>
+          <ListItem>Streamlines the deployment workflow</ListItem>
+          <ListItem>Reduces human error</ListItem>
+          <ListItem>Formalises deployment workflow (optional multiple sign-offs)</ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <p>
+          Can mention backend (terraform) as well as frontend (netlify, Vercel (was "Zeit Now") and AWS S3)
+        </p>
+      </Notes>
+    </Slide>
+
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          ✨<i>Webhooks and Websockets</i> ✨
+        </Heading>
+        <UnorderedList>
+          <ListItem>Helps decouple applications through events</ListItem>
+          <ListItem></ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <p>
+          Webhooks - App-to-app communcation/triggers
+          Websockets - 2-way communication between user(s) and application
+        </p>
+      </Notes>
+    </Slide>
+
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          ✨<i>Functions as a Service (FaaS)</i> ✨
+        </Heading>
+        <UnorderedList>
+          <ListItem>Helps decouple applications through events</ListItem>
+          <ListItem></ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <p>
+
+        </p>
+      </Notes>
+    </Slide>
+
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          ✨<i>Web Assembly</i> ✨
+        </Heading>
+        <UnorderedList>
+          <ListItem>Web applications running at core CPU speed (eg with Rust)</ListItem>
+          <ListItem></ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <p>
+
+        </p>
+      </Notes>
     </Slide>
 
     {/* <Slide>
