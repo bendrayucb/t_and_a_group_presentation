@@ -302,6 +302,11 @@ const Presentation = () => (
           <ListItem>Future-proofed applications</ListItem>
           <ListItem>API versioning</ListItem>
         </UnorderedList>
+        <FlexBox>
+          <Link href="https://youtu.be/y0U-ZxgLu98">REST: https://youtu.be/y0U-ZxgLu98</Link>
+          <Link href="https://youtu.be/b7tMHnxzK34">GraphQL: https://youtu.be/b7tMHnxzK34</Link>
+        </FlexBox>
+        <Link href="https://www.youtube.com/watch?v=SouNISAnXlo">Microservices: https://www.youtube.com/watch?v=SouNISAnXlo</Link>
       </FlexBox>
       <Notes>
         <ul>
@@ -311,9 +316,6 @@ const Presentation = () => (
           <li>...and if input/output parameters DO change, then this is elegantly handled with API versioning</li>
           <li>API Versioning (either put "V1" into the URI or put it in a custom header)</li>
         </ul>
-        <Link href="https://youtu.be/y0U-ZxgLu98">REST API: https://youtu.be/y0U-ZxgLu98</Link>
-        <Link href="https://youtu.be/b7tMHnxzK34">GraphQL API: https://youtu.be/b7tMHnxzK34</Link>
-        <Link href="https://www.youtube.com/watch?v=SouNISAnXlo">Microservices: https://www.youtube.com/watch?v=SouNISAnXlo</Link>
       </Notes>
     </Slide>
 
@@ -330,6 +332,8 @@ const Presentation = () => (
           <ListItem>Webhooks: Trigger events in another service</ListItem>
           <ListItem>Websockets: Two-way communication</ListItem>
         </UnorderedList>
+        <Link href="https://youtu.be/aLjSNfoJCYc">Webhooks: https://youtu.be/aLjSNfoJCYc</Link>
+        <Link href="https://youtu.be/ZbrEztkwcw8">Websockets: https://youtu.be/ZbrEztkwcw8</Link>
       </FlexBox>
       <Notes>
         <p>
@@ -351,6 +355,7 @@ const Presentation = () => (
           <ListItem>Language agnostic</ListItem>
           <ListItem>Highly available / scalable</ListItem>
         </UnorderedList>
+        <Link href="https://youtu.be/eOBq__h4OJ4">AWS Lambda: https://youtu.be/eOBq__h4OJ4</Link>
       </FlexBox>
       <Notes>
         <ul>
@@ -372,6 +377,7 @@ const Presentation = () => (
           <ListItem>Memory-safe deployments</ListItem>
           <ListItem>Part of the Open Web platform</ListItem>
         </UnorderedList>
+        <Link href="https://youtu.be/MaJCfdmr9Wg">Web Assembly: https://youtu.be/MaJCfdmr9Wg</Link>
       </FlexBox>
       <Notes>
         <ul>
