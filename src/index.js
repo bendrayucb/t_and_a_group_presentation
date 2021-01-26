@@ -164,20 +164,26 @@ run;`);
 
 const Presentation = () => (
   <Deck theme={theme} template={template} transitionEffect="fade">
+
+    <Slide>
+      <FlexBox height="100%">
+        <Heading>SSI SWOT Analysis</Heading>
+      </FlexBox>
+    </Slide>
+
     <Slide>
       <Markdown>
         {`
           # Strengths
           - Great architecture (isolated modular components)*
           - Great application development*
-          - Well-curated team of strong team of developers
+          - Well-curated team of strong developers
 
           ***** *within the confines of SAS, VBA and sharepoint*
         `}
       </Markdown>
       <Notes>
-        <p>The architecture seems well-written for SAS and VBA so it is a decent team of programmers - however the constraints of doing everything in SAS and VBA means "whata is possible" is significantly limited both in terms of functionality, testsability and replaceability</p>
-
+        <p>The architecture and code is well-written for SAS and VBA so it is clearly a decent team of programmers - however the constraints of doing everything in SAS and VBA means that the "what is possible" is significantly limited both in terms of functionality, testability and replaceability</p>
       </Notes>
     </Slide>
 
@@ -186,12 +192,20 @@ const Presentation = () => (
         {`
           # Weaknesses
 
-          - "Locked in" to Microsoft products 
+          - "Locked in" to Microsoft tools
           - Opinionated framework
-          - Limited "tool box" for building solutions
- 
+          - Limited "tool box" of options for building solutions
+          - Learning curve for developers
         `}
       </Markdown>
+      <Notes>
+        <ul>
+          <li>Conversion to strength: Liberate UCB to implement the "happy path" whether it is microsoft or open source or "other" (many companies are presesnting API endpoints now)</li>
+          <li>Conversion to strength: Expanding upon what Giuseppe has done with isolated services, we can isolate them further for "hot swapping" (see later slide for decoupled microservices)</li>
+          <li>Conversion to strength: Being able to use any language/service in isolation, we have the freedom and peace of mine that we are not locking it into a monolithic application</li>
+          <li>Conversion to strength: Training and experimentation (cloud/kubernetes for sandboxing development would greatly help here)</li>
+        </ul>
+      </Notes>
     </Slide>
 
     <Slide>
@@ -214,11 +228,24 @@ const Presentation = () => (
       <Markdown>
         {`
           # Threats
-
-          - Learning curve for developers
           - Resistance from IT to non-microsoft products 
         `}
       </Markdown>
+      <Notes>
+        <ul>
+          <li>Conversion to opportunity... we could team up with IT or let them take the credit for setting up a connection to cloud provider (I can work with them to set up a VPN to AWS for example)</li>
+          <li>Conversion to opportunity... If we only need "in house" development, we could perhaps have our own cloud account and work in isolation with NON-CONFIDENTIAL data (eg autotrial program generation?)</li>
+          <li>I don't know the situation/politics in UCB yet looking as an outsider, I see a relatively "quick win" would be using AWS S3 encrypted object storage....</li>
+          <li>It has innate encryption, version control and tight read/write access rules</li>
+          <li>Anyone can create an AWS account for free to experiment - just needs a credit card and email associated to it and has a generous "free" allowance for a lot of services</li>
+        </ul>
+      </Notes>
+    </Slide>
+
+    <Slide>
+      <FlexBox height="100%">
+        <Heading>🛠 Assessment of current tools 🛠</Heading>
+      </FlexBox>
     </Slide>
 
     <Slide>
@@ -237,28 +264,16 @@ const Presentation = () => (
       </Markdown>
     </Slide>
 
-
-
-    {/* <Slide>
-      <Markdown>
-        {`
-          # Compare / Contrast: Testing
-
-          | Task/Feature                                         | Current   | Possible        |
-          |------------------------------------------------------|-----------|----------------------------------------------|
-          | Unit Testing                                         | ?         | Dedicated opensource libraries (eg Jest, )   |
-          | Integration Testing                                  | ?         | Dedicated opensource libraries (eg Jest, )   |
-          | Regression Testing                                   | ?         | Dedicated opensource libraries (eg Jest, )   |
-          | User Testing                                         | ?         | Dedicated opensource libraries (eg Jest, )   |
-        `}
-      </Markdown>
-    </Slide> */}
-
+    <Slide>
+      <FlexBox height="100%">
+        <Heading>🛠 Tools available to us 🛠</Heading>
+      </FlexBox>
+    </Slide>
 
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨<i>Continuous Intergration/ Continuous Deployment (CI/CD)</i> ✨
+          <i>Continuous Intergration/ Continuous Deployment (CI/CD)</i>
         </Heading>
         <UnorderedList>
           <ListItem>Promotes testing as "first class citizen" and not an after-thought</ListItem>
@@ -268,8 +283,17 @@ const Presentation = () => (
         </UnorderedList>
       </FlexBox>
       <Notes>
+        <ul>
+          <li>CI/CD encourages developers to consider testing as central to development process: Unit / Integration / Regression</li>
+          <li>Seamless automated workflow: When a developer commits a change, the backend runs the whole library of tests on the code. If anything fails it STOPS deployment. If it succeeds it can be presented to the business owner(s) to review and press the "DEPLOY" button (or even automatically deploy)</li>
+          <li>
+            
+          </li>
+          <li>It has innate encryption, version control and tight read/write access rules</li>
+          <li>Anyone can create an AWS account for free to experiment - just needs a credit card and email associated to it and has a generous "free" allowance for a lot of services</li>
+        </ul>
         <p>
-          Can mention backend (terraform) as well as frontend (netlify, Vercel (was "Zeit Now") and AWS S3)
+          
         </p>
       </Notes>
     </Slide>
@@ -279,7 +303,7 @@ const Presentation = () => (
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨APIs & Decoupled Microservices✨
+          APIs & Decoupled Microservices
         </Heading>
         <UnorderedList>
           <ListItem>API design</ListItem>
@@ -304,7 +328,7 @@ const Presentation = () => (
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨Webhooks and Websockets ✨
+          Webhooks and Websockets
         </Heading>
         <UnorderedList>
           <ListItem>Webhooks: Trigger events in another service</ListItem>
@@ -324,7 +348,7 @@ const Presentation = () => (
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨<i>Functions as a Service (FaaS)</i> ✨
+          Functions as a Service (FaaS)
         </Heading>
         <UnorderedList>
           <ListItem>API endpoint</ListItem>
@@ -344,7 +368,7 @@ const Presentation = () => (
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          ✨<i>Web Assembly</i> ✨
+          Web Assembly
         </Heading>
         <UnorderedList>
           <ListItem>Compiled code running in the browser</ListItem>
