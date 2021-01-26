@@ -60,107 +60,26 @@ const template = () => (
 const formidableLogo =
   'https://avatars2.githubusercontent.com/u/5078602?s=280&v=4';
 
-const cppCodeBlock = indentNormalizer(`
-#include <iostream>
-#include <cstdlib>
-#include <sstream>
-#include <pthread.h>
-
-struct thread_data_t
+const exampleJsonBlock = indentNormalizer(`
 {
-   int  thread_id;
-   std::string message;
-};
-
-void *print_thread_message(void *thread_arg)
-{
-   struct thread_data_t *thread_data;
-   thread_data = (struct thread_data_t *) thread_arg;
-
-   cout << "Thread ID: " << thread_data->thread_id;
-   cout << "Message: " << thread_data->message << endl;
-
-   pthread_exit(NULL);
-}
-
-int main()
-{
-  pthread_t threads[NUM_THREADS];
-  struct thread_data_t thread_data[NUM_THREADS];
-
-  for (int i = 0; i < NUM_THREADS; i++)
-  {
-    auto curried_add = [](int x) -> function<int(int)> { return [=](int y) { return x + y; }; };
-    auto answer = curried_add(i)(5);
-
-    std::stringstream message;
-    message << "The math result is " << answer << "!";
-    thread_data.thread_id = i;
-    thread_data.message = message.str();
-    int err = pthread_create(&threads, NULL, print_thread_message, (void *)&thread_data[i]);
-
-    if (err)
-    {
-      exit(-1)
-    }
-  }
-
-  return 0;
+	"project": [{
+		"projectCode": "ABCD",
+		"id": "1",
+		"studies": [{
+				"studyCode": "ABCD1234",
+				"Inication": "COVID Vaccine",
+				"Phase": "1",
+				"created": "2020-03-22T14:56:29.000Z"
+			},
+			{
+				"studycode": "EFGH5678",
+				"Inication": "COVID Vaccine",
+				"Phase": "3",
+				"created": "2021-01-01T14:56:29.000Z"
+			}
+		]
+	}]
 }`);
-
-const cppCodeBlock2 = indentNormalizer(`
-proc sort data=&indata;
-  by usubjid trtgrp lab;
-run;
-
-proc sort data=base;
-  by usubjid trtgrp lab ;
-run;
-
-data baseline (keep=usubjid base_value lab trtgrp) postbaseline (keep=usubjid postbase_val lab trtgrp) ;
-  set &indata(in=a) base(in=b );
-  if trtgrp=&trtgrp;
-  if b then do; base_value = cholesterol; output baseline;end;
-  if a then do;postbase_val= cholesterol; output postbaseline;end;
-run;
-
-proc sort data=baseline;
-  by usubjid lab;
-run;
-
-proc sort data=postbaseline;
-  by usubjid lab ;
-run;
-
-data merge&outdata;
-  merge baseline postbaseline;
-  by usubjid lab ;
-  base_val=3;
-run;
-
-proc sort data=merge&outdata;
-  by lab base_val;
-run;
-
-
-proc means data=merge&outdata noprint;
-  by lab base_val;
-  var abnormal normal missing ;
-  output out=stat1 sum=cnt1 cnt2 cnt3 ;
-run;
-
-proc sort data=stat1 out=temp2(keep=lab) nodupkey;
-  by lab;
-run;
-
-data temp3;
-  set temp2;
-  by lab;
-  retain cnt1-cnt3 0;
-  do base_val=1 to 3;
-  output;
-end;
-run;`);
 
 const Presentation = () => (
   <Deck theme={theme} template={template} transitionEffect="fade">
@@ -299,11 +218,64 @@ const Presentation = () => (
     </Slide>
 
 
+    <Slide transitionEffect="slide">
+      <Heading>APIs & Decoupled Microservices (1/2)</Heading>
+      <Stepper
+        defaultValue={[]}
+        values={[
+          [2, 2],
+          [5, 9],
+          [12, 15]
+        ]}
+      >
+        {(value, step) => (
+          <Box position="relative">
+            <CodePane
+              highlightStart={value[0]}
+              highlightEnd={value[1]}
+              // fontSize={18}
+              language="json"
+              autoFillHeight
+            >
+              {exampleJsonBlock}
+            </CodePane>
+
+            <Box
+              position="absolute"
+              bottom="0rem"
+              left="0rem"
+              right="0rem"
+              bg="black"
+            >
+
+              {step === 0 && (
+                <Text fontSize="1.5rem" margin="0rem">
+                  JSON object can as much or as little information as needed
+                </Text>
+              )}
+
+              {step === 1 && (
+                <Text fontSize="1.5rem" margin="0rem">
+                  Project entity
+                </Text>
+              )}
+
+              {step === 2 && (
+                <Text fontSize="1.5rem" margin="0rem">
+                  Nested stuy entities
+                </Text>
+              )}
+            </Box>
+          </Box>
+        )}
+      </Stepper>
+    </Slide>
+
 
     <Slide>
       <FlexBox height="100%" flexDirection="column">
         <Heading margin="0px" fontSize="h1">
-          APIs & Decoupled Microservices
+          APIs & Decoupled Microservices (2/2)
         </Heading>
         <UnorderedList>
           <ListItem>API design</ListItem>
@@ -390,6 +362,12 @@ const Presentation = () => (
 
 
 
+
+
+
+
+
+
     {/* <Slide>
       <FlexBox height="100%">
         <Button type="primary">Primary Button</Button>
@@ -454,63 +432,7 @@ const Presentation = () => (
         </ListItem>
       </UnorderedList>
     </Slide>
-    <Slide transitionEffect="slide">
-      <Heading>Code Blocks</Heading>
-      <Stepper
-        defaultValue={[]}
-        values={[
-          [1, 5],
-          [23, 25],
-          [40, 42]
-        ]}
-      >
-        {(value, step) => (
-          <Box position="relative">
-            <CodePane
-              highlightStart={value[0]}
-              highlightEnd={value[1]}
-              // fontSize={18}
-              language="sas"
-              autoFillHeight
-            >
-              {cppCodeBlock2}
-            </CodePane>
 
-            <Box
-              position="absolute"
-              bottom="0rem"
-              left="0rem"
-              right="0rem"
-              bg="black"
-            >
-
-              {step === 0 && (
-                <Text fontSize="1.5rem" margin="0rem">
-                  Top of the file
-                </Text>
-              )}
-
-              {step === 1 && (
-                <Text fontSize="1.5rem" margin="0rem">
-                  This is a note!
-                </Text>
-              )}
-
-              {step === 2 && (
-                <Text fontSize="1.5rem" margin="0rem">
-                  You can use the stepper state to render whatever you like as
-                  you step through the code.
-                </Text>
-              )}
-            </Box>
-          </Box>
-        )}
-      </Stepper>
-      <Text>
-        Code Blocks now auto size and scroll when there is an overflow of
-        content! They also auto-wrap longer lines.
-      </Text>
-    </Slide>
     <Slide>
       <Heading>Animated Elements</Heading>
       <OrderedList>
