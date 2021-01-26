@@ -133,14 +133,21 @@ const Presentation = () => (
           # Opportunities
 
           - Microservices
-          - Cloud services
+          - Cloud services / Kubernetes on-prem
             - "Function as a Service (FaaS)"
             - Security
-            - Kubernetes (Federates ability to do "PoC" projects)
           - Open source projects
           - Command line tools
         `}
       </Markdown>
+      <Notes>
+        <ul>
+          <li>Microservices are typically based on a server but encapsulates any isolated applications that take in and/or generate output</li>
+          <li>Cloud providers and kubernetes provide ability to experiment, learn and ultimately "fail fast"</li>
+          <li>Open source projects allow "free work" from collaborators as well as raise profile of the company</li>
+          <li>Powerful and good productivity tool and for reducing human error</li>
+        </ul>
+      </Notes>
     </Slide>
 
     <Slide>
