@@ -14,6 +14,7 @@ import {
   Grid,
   Heading,
   Image,
+  Link,
   ListItem,
   Markdown,
   Notes,
@@ -76,6 +77,12 @@ const exampleJsonBlock = indentNormalizer(`
 				"Inication": "COVID Vaccine",
 				"Phase": "3",
 				"created": "2021-01-01T14:56:29.000Z"
+      },
+			{
+				"studycode": "IJKL9101",
+				"Inication": "Oncology",
+				"Phase": "3",
+				"created": "2022-01-01T14:56:29.000Z"
 			}
 		]
 	}]
@@ -207,6 +214,11 @@ const Presentation = () => (
           <ListItem>Reduces human error</ListItem>
           <ListItem>Formalises deployment workflow (optional multiple sign-offs)</ListItem>
         </UnorderedList>
+        <FlexBox>
+          <Link href="https://youtu.be/Rq5TQlPyr8g">https://youtu.be/Rq5TQlPyr8g</Link>
+          {/* <Text>QR Code link here</Text> */}
+        </FlexBox>
+        
       </FlexBox>
       <Notes>
         <ul>
@@ -286,6 +298,7 @@ const Presentation = () => (
         </Heading>
         <UnorderedList>
           <ListItem>API design</ListItem>
+          <ListItem>CRUD transactions to database</ListItem>
           <ListItem>Future-proofed applications</ListItem>
           <ListItem>API versioning</ListItem>
         </UnorderedList>
@@ -293,10 +306,14 @@ const Presentation = () => (
       <Notes>
         <ul>
           <li>API Design - specifies requirements of input and output parameters</li>
+          <li>While the majority of API actions are just requesting to READ data, it is also possible (if authenticated and authorised) to WRITE, UPDATE and DELETE</li>
           <li>Each microservice can be built/hosted/switched out in isolation. If anything becomes redundant or not fit for purpose it can be switched out. Only requirement is that the input/output parameters remain unchanged</li>
           <li>...and if input/output parameters DO change, then this is elegantly handled with API versioning</li>
           <li>API Versioning (either put "V1" into the URI or put it in a custom header)</li>
         </ul>
+        <Link href="https://youtu.be/y0U-ZxgLu98">REST API: https://youtu.be/y0U-ZxgLu98</Link>
+        <Link href="https://youtu.be/b7tMHnxzK34">GraphQL API: https://youtu.be/b7tMHnxzK34</Link>
+        <Link href="https://www.youtube.com/watch?v=SouNISAnXlo">Microservices: https://www.youtube.com/watch?v=SouNISAnXlo</Link>
       </Notes>
     </Slide>
 
