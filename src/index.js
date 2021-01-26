@@ -193,6 +193,7 @@ const Presentation = () => (
           | APIs                                                 | ?          | REST, graphql                                            |
           | Documentation                                        | Sharepoint | Auto-generated (eg swagger.io, pdoc3)                    |
           | Version Control                                      | SVN?       | Git for code, SVN for datasets                           |
+          | Visualisations                                       | SAS?       | React libraries, D3, Jupyter notebooks, Web Assembly     |
         `}
       </Markdown>
     </Slide>
@@ -390,7 +391,23 @@ const Presentation = () => (
     </Slide>
 
 
-
+    <Slide>
+      <FlexBox height="100%" flexDirection="column">
+        <Heading margin="0px" fontSize="h1">
+          Requirements
+        </Heading>
+        <UnorderedList>
+          <ListItem>Server / Kubernetes service / Cloud provider</ListItem>
+          <ListItem>Command line terminal</ListItem>
+        </UnorderedList>
+      </FlexBox>
+      <Notes>
+        <ul>
+          <li>Cloud ideally VPN (I could help) but disconnected is also ok initially</li>
+          <li>Not available on my Cytel machine</li>
+          </ul>
+      </Notes>
+    </Slide>
 
 
 
